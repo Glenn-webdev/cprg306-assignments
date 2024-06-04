@@ -81,11 +81,8 @@ const item1 = {
 
 
 return (
-  <><div>
-    <h1>Shopping List</h1>
-  </div>
-  
-  <div>
+<div>
+    <h1 class='font-extrabold text-center'> Shopping List</h1>
 
 
       <ul>
@@ -154,7 +151,7 @@ return (
 
 
       </ul>
-    </div></>
+    </div>
 );
 }
 
