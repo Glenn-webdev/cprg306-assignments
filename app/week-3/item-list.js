@@ -26,13 +26,14 @@ return (
 
 <Item
 name = {item1.name}
-quanntity = {item1.quantity}
+quantity = {item1.quantity}
 category = {item1.category}
 />
 
+
 <Item
 name = {item2.name}
-quanntity = {item2.quantity}
+quantity = {item2.quantity}
 category = {item2.category}
 />
 
