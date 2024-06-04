@@ -2,7 +2,7 @@ const Item = ({name,quantity,category}) => {
 
     return (
         <li>
-            <div className='p-3 border rounded shadow-md'>
+            <div className=' w-60  text-center p-1 border-2 rounded-full shadow-md'>
                 <p className="text-sm font-semibold">Name: {name}</p>
                 <p className="text-sm font-semibold">Category: {category}</p>
             
