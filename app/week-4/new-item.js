@@ -24,7 +24,7 @@ export default function NewItem() {
        
 
         console.log(item);
-        alert(`Name: ${name}Quantity: ${quantity} Category: ${category}`);
+        alert(`Name: ${name} Quantity: ${quantity} Category: ${category}`);
 
 
     };
