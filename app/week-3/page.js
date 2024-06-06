@@ -4,7 +4,7 @@ export default function page() {
 
     return (
         <div> 
-            <ItemList></ItemList>
+            <ItemList></ItemList>=
         </div>
     );
     
