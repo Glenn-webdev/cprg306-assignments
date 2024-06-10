@@ -12,25 +12,25 @@ export default function NewItem() {
     const handleSubmit = (event) => {
          event.preventDefault(); 
     const item = {name,category,quantity};
-         
+
+    
+       
     if (name == "") {
         alert("Name is empty!");  
-     
-
-         } 
-
-         if (quantity > 10) 
-            {
-                alert("Quantity is more than 10!");  
-            }
+         return;  
          
-         
-         else {
+        } 
+
+     if (quantity > 10) {
+        alert("quantity is more thant 10!")
+        return;
+     }   
+
             console.log(item);
             alert(`Name: ${name} Quantity: ${quantity} Category: ${category}`);
             
-        }    
-    };
+    
+    }; 
 
     
 
