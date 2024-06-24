@@ -12,6 +12,7 @@ const ItemList = () => {
    
     setTimeout(() => {
     
+      
       const sortedItems = [...itemsData].sort((a, b) => {
         if (sortBy === 'name') {
           return a.name.localeCompare(b.name);
@@ -32,11 +33,26 @@ const ItemList = () => {
          <label id="sort">Sort by:</label>
 
         
-        <select id="sort" value={sortBy}
-          onChange={(e) => setSortBy(e.target.value)}>
-          <option value="name">Name</option>
-          <option value="category">Category</option>
-        </select> 
+         <div className='space-x-5 px-5 shadow-lg'>
+         <button className="rounded-lg px-4 border-neutral-600"
+            data-value="name"
+            onClick={(e) => setSortBy(e.target.getAttribute('data-value'))}
+            style={{ backgroundColor: sortBy === 'name' ? 'blue' : 'grey', color: 'white' }}
+          >
+            Name
+          </button>
+
+          <button className="rounded-lg px-4"
+            data-value="category"
+            onClick={(e) => setSortBy(e.target.getAttribute('data-value'))}
+            style={{ backgroundColor: sortBy === 'category' ? 'blue' : 'grey', color: 'white' }}
+          >
+            Category
+          </button>
+    </div>
+
+     
+      
       </div>
 
 
