@@ -1,7 +1,4 @@
 
-"use client";
-
-import React,{ useState } from "react";
 import ItemList from "../week-5/item-list";
 import NewItem from "./new-item";
 
