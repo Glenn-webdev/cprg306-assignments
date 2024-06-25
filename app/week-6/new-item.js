@@ -55,7 +55,7 @@ export default function NewItem() {
         <form onSubmit={handleSubmit}>
             <div className="border border-indigo-600 flex-initial p-4 rounded-lg bg-red bg-zinc-300">
                 <div>
-                    <label for="name">Name</label>
+                    <label htmlFor="name">Name</label>
                     </div>
                     <div> 
                     <input type="text" value={name} onChange={handleTextChange}/>
@@ -88,7 +88,7 @@ export default function NewItem() {
                         </select>     
                     
                     </div>
-                    <div class ='py-4 flex justify-center '>
+                    <div className ='py-4 flex justify-center '>
                         <button onClick={console.log(category)} className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit</button>
                     </div>
                              
