@@ -22,19 +22,20 @@ const ItemList = () => {
           return 0;
         }
       });
-      setItems(sortedItems);}, 1000);}, [sortBy]); 
+      setItems(sortedItems);}, 500);}, [sortBy]); 
 
   return (
     <div>
       <h2 className='font-extrabold text-center bg-clip-padding'>Shopping List</h2>
       <div>
+       
 
+        
+         <div className='space-x-5 px-5 py-3'>
 
          <label id="sort">Sort by:</label>
 
-        
-         <div classNameName='space-x-5 px-5 shadow-lg'>
-         <button classNameName="rounded-lg px-4 border-neutral-600"
+         <button className="rounded-lg px-4 border-neutral-600"
             data-value="name"
             onClick={(e) => setSortBy(e.target.getAttribute('data-value'))}
             style={{ backgroundColor: sortBy === 'name' ? 'blue' : 'grey', color: 'white' }}
@@ -42,7 +43,7 @@ const ItemList = () => {
             Name
           </button>
 
-          <button classNameName="rounded-lg px-4"
+          <button className="rounded-lg px-4"
             data-value="category"
             onClick={(e) => setSortBy(e.target.getAttribute('data-value'))}
             style={{ backgroundColor: sortBy === 'category' ? 'blue' : 'grey', color: 'white' }}
@@ -56,7 +57,7 @@ const ItemList = () => {
       </div>
 
 
-      <div classNameName='pl-10 pt-4 pb-4'>
+      <div className='pl-10 pt-4 pb-4'>
         {items.map(item => (
           
           <Item key={item.id}

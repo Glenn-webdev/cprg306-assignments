@@ -1,7 +1,7 @@
 "use client";
 
 
-import ItemList from "../week-5/item-list";
+import ItemList from "../week-6/item-list";
 import NewItem from "./new-item";
 
 
