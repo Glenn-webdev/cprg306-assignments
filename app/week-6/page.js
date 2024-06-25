@@ -6,14 +6,15 @@ import ItemList from "../week-5/item-list";
 import NewItem from "./new-item";
 import ItemsData from "../week-5/item.json";
 
-export default function page() {
+const page = () => {
     
         const [items, setItems] = useState([...ItemsData]); // Initialize items with data from items.json
       
-        // Event handler to add a new item
+         //Event handler to add a new item
         const handleAddItem = (newItem) => {
-          setItems((prevItems) => [...prevItems, newItem]);
+        setItems((prevItems) => [...prevItems, newItem]);
         };
+        
     
 
     return (
@@ -27,3 +28,5 @@ export default function page() {
 
 
 }
+
+export default page;
