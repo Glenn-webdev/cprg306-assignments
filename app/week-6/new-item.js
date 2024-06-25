@@ -53,7 +53,7 @@ export default function NewItem() {
     return (
 
         <form onSubmit={handleSubmit}>
-            <div class="border border-indigo-600 flex-initial p-4 rounded-lg bg-red bg-zinc-300">
+            <div className="border border-indigo-600 flex-initial p-4 rounded-lg bg-red bg-zinc-300">
                 <div>
                     <label for="name">Name</label>
                     </div>
