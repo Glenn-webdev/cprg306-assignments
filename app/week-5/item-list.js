@@ -30,10 +30,11 @@ const ItemList = () => {
       <div>
 
 
-         <label id="sort">Sort by:</label>
+         
 
         
-         <div className='space-x-5 px-5 shadow-lg'>
+         <div className='space-x-5 px-5'>
+         <label id="sort">Sort by:</label>
          <button className="rounded-lg px-4 border-neutral-600"
             data-value="name"
             onClick={(e) => setSortBy(e.target.getAttribute('data-value'))}
