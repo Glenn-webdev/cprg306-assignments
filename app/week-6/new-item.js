@@ -52,7 +52,7 @@ export default function NewItem() {
 
     return (
 
-        <htmlForm onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div className="border border-indigo-600 flex-initial p-4 rounded-lg bg-red bg-zinc-300">
                 <div>
                     <label htmlFor="name">Name</label>
@@ -94,7 +94,7 @@ export default function NewItem() {
                              
                  </div>
 
-</htmlForm>
+</form>
 
 
         
