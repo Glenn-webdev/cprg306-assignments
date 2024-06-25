@@ -6,7 +6,7 @@ import ItemList from "../week-5/item-list";
 import NewItem from "./new-item";
 import ItemsData from "../week-5/item.json";
 
-const page = () => {
+const Page = () => {
     
         const [items, setItems] = useState([...ItemsData]); // Initialize items with data from items.json
       
@@ -29,4 +29,4 @@ const page = () => {
 
 }
 
-export default page;
+export default Page;
