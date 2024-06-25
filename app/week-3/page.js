@@ -1,6 +1,6 @@
 import ItemList from './item-list'
 
-export default function page() {
+export default function Page() {
 
     return (
         <div> 
