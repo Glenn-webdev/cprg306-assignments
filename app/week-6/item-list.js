@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import itemsData from '../week-5/item.json'; 
+import ItemsData from '../week-5/item.json'; 
 import Item from './item';
 
 
@@ -13,7 +13,7 @@ const ItemList = () => {
     setTimeout(() => {
     
       
-      const sortedItems = [...itemsData].sort((a, b) => {
+      const sortedItems = [...ItemsData].sort((a, b) => {
         if (sortBy === 'name') {
           return a.name.localeCompare(b.name);
         } else if (sortBy === 'category') {
@@ -26,15 +26,15 @@ const ItemList = () => {
 
   return (
     <div>
-      <h2 class='font-extrabold text-center bg-clip-padding'>Shopping List</h2>
+      <h2 className='font-extrabold text-center bg-clip-padding'>Shopping List</h2>
       <div>
 
 
          <label id="sort">Sort by:</label>
 
         
-         <div className='space-x-5 px-5 shadow-lg'>
-         <button className="rounded-lg px-4 border-neutral-600"
+         <div classNameName='space-x-5 px-5 shadow-lg'>
+         <button classNameName="rounded-lg px-4 border-neutral-600"
             data-value="name"
             onClick={(e) => setSortBy(e.target.getAttribute('data-value'))}
             style={{ backgroundColor: sortBy === 'name' ? 'blue' : 'grey', color: 'white' }}
@@ -42,7 +42,7 @@ const ItemList = () => {
             Name
           </button>
 
-          <button className="rounded-lg px-4"
+          <button classNameName="rounded-lg px-4"
             data-value="category"
             onClick={(e) => setSortBy(e.target.getAttribute('data-value'))}
             style={{ backgroundColor: sortBy === 'category' ? 'blue' : 'grey', color: 'white' }}
@@ -56,7 +56,7 @@ const ItemList = () => {
       </div>
 
 
-      <div className='pl-10 pt-4 pb-4'>
+      <div classNameName='pl-10 pt-4 pb-4'>
         {items.map(item => (
           
           <Item key={item.id}
