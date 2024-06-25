@@ -52,7 +52,7 @@ export default function NewItem() {
 
     return (
 
-        <form onSubmit={handleSubmit}>
+        <htmlForm onSubmit={handleSubmit}>
             <div className="border border-indigo-600 flex-initial p-4 rounded-lg bg-red bg-zinc-300">
                 <div>
                     <label htmlFor="name">Name</label>
@@ -62,13 +62,13 @@ export default function NewItem() {
                 </div>
                
                 <div>
-                    <label for="quantity">Quantity</label>
+                    <label htmlFor="quantity">Quantity</label>
                     </div>
                     <div>
                     <input type="number" value={quantity} onChange={handleQuantityChange}/>
                 </div>
                 <div>
-                <label for="category">Category</label>
+                <label htmlFor="category">Category</label>
                 </div>
                     <div>
 
@@ -94,14 +94,9 @@ export default function NewItem() {
                              
                  </div>
 
-</form>
+</htmlForm>
 
 
-
-
-
-
-    
         
            
         
