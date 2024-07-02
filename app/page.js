@@ -16,6 +16,8 @@ export default function Home() {
                 <Link href = "/week-4" className="text-blue-600 visited:text-purple-600 ..."><h2 className="underline underline-offset-2 ...">WEEK 4</h2></Link>
                 <Link href = "/week-5" className="text-blue-600 visited:text-purple-600 ..."><h2 className="underline underline-offset-2 ...">WEEK 5</h2></Link>
                 <Link href = "/week-6" className="text-blue-600 visited:text-purple-600 ..."><h2 className="underline underline-offset-2 ...">WEEK 6</h2></Link>  
+                <Link href = "/week-7" className="text-blue-600 visited:text-purple-600 ..."><h2 className="underline underline-offset-2 ...">WEEK 7</h2></Link>  
+          
             </div>
           
     </main>
