@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Item from "./item";
 
-const ItemList = ({ items }) => {
+export default function ItemList ({ items,onItemSelect }) {
   const [sortBy, setSortBy] = useState("name");
 
   const groupByCategory = (items) => {
@@ -19,13 +19,13 @@ const ItemList = ({ items }) => {
         .sort((a, b) => a.name.localeCompare(b.name))
         .map((item) => 
         
-        <Item key={item.id} {...item} />);
+        <Item onSelect={() => onItemSelect(item.name)} key={item.id} {...item} />);
     } else if (sortBy === "category") {
       return [...items]
         .sort((a, b) => a.category.localeCompare(b.category))
         .map((item) => 
         
-        <Item key={item.id} {...item} />);
+        <Item onSelect={() => onItemSelect(item.name)} key={item.id} {...item} />);
     } else if (sortBy === "grouped") {
       const grouped = groupByCategory(items);
       return Object.keys(grouped).map((category) => (
@@ -34,7 +34,7 @@ const ItemList = ({ items }) => {
           {grouped[category]
             .sort((a, b) => a.name.localeCompare(b.name))
             .map((item) => (
-              <Item key={item.id} {...item} />
+              <Item onSelect={() => onItemSelect(item.name)} key={item.id} {...item} />
             ))}
         </div>
       ));
@@ -70,4 +70,4 @@ const ItemList = ({ items }) => {
   );
 };
 
-export default ItemList;
+
