@@ -17,11 +17,15 @@ const ItemList = ({ items }) => {
     if (sortBy === "name") {
       return [...items]
         .sort((a, b) => a.name.localeCompare(b.name))
-        .map((item) => <Item key={item.id} {...item} />);
+        .map((item) => 
+        
+        <Item key={item.id} {...item} />);
     } else if (sortBy === "category") {
       return [...items]
         .sort((a, b) => a.category.localeCompare(b.category))
-        .map((item) => <Item key={item.id} {...item} />);
+        .map((item) => 
+        
+        <Item key={item.id} {...item} />);
     } else if (sortBy === "grouped") {
       const grouped = groupByCategory(items);
       return Object.keys(grouped).map((category) => (

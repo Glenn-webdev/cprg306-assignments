@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react';
-import NewItem from './new-item';
 import ItemList from './item-list';
 import itemsData from './item.json';
+import MealIdeas from './meal-ideas';
 
 const Page = () => {
   
@@ -17,6 +17,7 @@ const Page = () => {
       
       
       <ItemList items={items} />
+      <MealIdeas/>
     </div>
   );
 };
