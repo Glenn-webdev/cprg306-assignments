@@ -1,95 +1,66 @@
-"use client";
+import React, { useState } from 'react';
 
-import React,{ useState } from "react";
+const NewItem = ({ onAddItem }) => {
+  const [name, setName] = useState('');
+  const [quantity, setQuantity] = useState(1);
+  const [category, setCategory] = useState('produce');
 
+  // Function to generate a random ID
+  const generateId = () => {
+    return Math.random().toString(36).substring(2, 15);
+  };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const newItem = {
+      id: generateId(), // Generate a random ID for the new item
+      name: name,
+      quantity: quantity,
+      category: category
+    };
 
+    onAddItem(newItem); // Call the onAddItem function passed via props with the new item
 
-export default function NewItem() {
+    // Reset form fields
+    setName('');
+    setQuantity(1);
+    setCategory('produce');
+  };
 
-    const [name,setName] = useState("");
-    const [quantity,setQuantity] = useState(1);
-    const [category,setCategory] = useState("Produce");
-   
+  const handleTextChange = (event) => {
+    setName(event.target.value);
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+}
 
-        const newID = () => {
-            return Math.random();
-        }
+const handleQuantityChange = (event) => {
+      setQuantity(event.target.value);
     
-        const newItem = {
-            id:newID,
-          name,
-          quantity,
-          category,
-          
-        };
-    
-        try {
-            const response = await fetch('/api/add-item', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(newItem),
-            });
-            const data = await response.json();
-            console.log('Item added successfully:', data);
-      
-            // Optional: Clear form fields after submission
-            setName('');
-            setQuantity(1);
-            setCategory('Produce');
-          } catch (error) {
-            console.error('Error adding item:', error);
-          }
-      };
-        
-    
-   
-            
-    
-    
+  
 
-    
+}
+const handleCategoryChange = (event) => {
+    setCategory(event.target.value);
+}
 
+  return (
 
-    const handleTextChange = (event) => {
-        setName(event.target.value);
-
-    }
-   
-    const handleQuantityChange = (event) => {
-          setQuantity(event.target.value);
-        
-      
-
-    }
-    const handleCategoryChange = (event) => {
-        setCategory(event.target.value);
-    }
-
-    return (
-
-        <form onSubmit={handleSubmit}>
-            <div className="border border-indigo-600 flex-initial p-4 rounded-lg bg-red bg-zinc-300">
+    <form onSubmit={handleSubmit} className='pl-20'>
+            <div className="border border-indigo-600 flex-initial p-4 rounded-lg bg-red bg-zinc-300 w-1/4">
                 <div>
-                    <label htmlFor="name">Name</label>
+                    <label for="name">Name</label>
                     </div>
                     <div> 
                     <input type="text" value={name} onChange={handleTextChange}/>
                 </div>
                
                 <div>
-                    <label htmlFor="quantity">Quantity</label>
+                    <label for="quantity">Quantity</label>
                     </div>
                     <div>
                     <input type="number" value={quantity} onChange={handleQuantityChange}/>
                 </div>
                 <div>
-                <label htmlFor="category">Category</label>
+                <label for="category">Category</label>
                 </div>
                     <div>
 
@@ -118,12 +89,7 @@ export default function NewItem() {
 </form>
 
 
-        
-           
-        
-       
-        
-
-    )
-    
+  );
 };
+
+export default NewItem;

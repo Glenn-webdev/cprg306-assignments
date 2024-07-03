@@ -1,71 +1,67 @@
-import React, { useState, useEffect } from 'react';
-import ItemsData from '../week-5/item.json'; 
-import Item from './item';
+import React, { useState } from "react";
+import Item from "./item";
 
+const ItemList = ({ items }) => {
+  const [sortBy, setSortBy] = useState("name");
 
-const ItemList = () => {
-  const [items, setItems] = useState([]);
-  const [sortBy, setSortBy] = useState('name'); 
+  const groupByCategory = (items) => {
+    return items.reduce((groups, item) => {
+      const group = groups[item.category] || [];
+      group.push(item);
+      groups[item.category] = group;
+      return groups;
+    }, {});
+  };
 
-  useEffect(() => {
-   
-   
-    setTimeout(() => {
-    
-      
-      const sortedItems = [...ItemsData].sort((a, b) => {
-        if (sortBy === 'name') {
-          return a.name.localeCompare(b.name);
-        } else if (sortBy === 'category') {
-          return a.category.localeCompare(b.category);
-        } else {
-          return 0;
-        }
-      });
-      setItems(sortedItems);}, 500);}, [sortBy]); 
+  const sortedItems = () => {
+    if (sortBy === "name") {
+      return [...items]
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((item) => <Item key={item.id} {...item} />);
+    } else if (sortBy === "category") {
+      return [...items]
+        .sort((a, b) => a.category.localeCompare(b.category))
+        .map((item) => <Item key={item.id} {...item} />);
+    } else if (sortBy === "grouped") {
+      const grouped = groupByCategory(items);
+      return Object.keys(grouped).map((category) => (
+        <div key={category}>
+          <h3 className="capitalize mt-4 mb-2 text-lg font-semibold">{category}</h3>
+          {grouped[category]
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map((item) => (
+              <Item key={item.id} {...item} />
+            ))}
+        </div>
+      ));
+    }
+  };
 
   return (
-    <div>
-      <h2 className='font-extrabold text-center bg-clip-padding'>Shopping List</h2>
-      <div>
-       
+    <div className="max-w-7xl mx-6 w-100 px-4">
+      <h2 className="font-extrabold text-center bg-clip-padding">Shopping List</h2>
+      <div className="flex justify-center space-x-2 my-4">
+        <label id="sort">Sort by:</label>
+        <button
+          className={`rounded-lg px-4 border-neutral-600 ${
+            sortBy === "name" ? "bg-blue-500 text-white" : "bg-gray-300 text-black"
+          }`}
+          onClick={() => setSortBy("name")}
+        >
+          Name
+        </button>
 
-        
-         <div className='space-x-5 px-5 py-3'>
-
-         <label id="sort">Sort by:</label>
-
-         <button className="rounded-lg px-4 border-neutral-600"
-            data-value="name"
-            onClick={(e) => setSortBy(e.target.getAttribute('data-value'))}
-            style={{ backgroundColor: sortBy === 'name' ? 'blue' : 'grey', color: 'white' }}
-          >
-            Name
-          </button>
-
-          <button className="rounded-lg px-4"
-            data-value="category"
-            onClick={(e) => setSortBy(e.target.getAttribute('data-value'))}
-            style={{ backgroundColor: sortBy === 'category' ? 'blue' : 'grey', color: 'white' }}
-          >
-            Category
-          </button>
-    </div>
-
-     
-      
+        <button
+          className={`rounded-lg px-4 border-neutral-600 ${
+            sortBy === "category" ? "bg-blue-500 text-white" : "bg-gray-300 text-black"
+          }`}
+          onClick={() => setSortBy("category")}
+        >
+          Category
+        </button>
       </div>
 
-
-      <div className='pl-10 pt-4 pb-4'>
-        {items.map(item => (
-          
-          <Item key={item.id}
-          name={item.name}
-          category={item.category}
-          quantity={item.quantity}></Item>
-        ))} 
-      </div>
+      <ul className="list-none m-4 p-4">{sortedItems()}</ul>
     </div>
   );
 };

@@ -82,7 +82,7 @@ const item1 = {
 
 return (
 <div>
-    <h1 class='font-extrabold text-center'> Shopping List</h1>
+    <h1 className='font-extrabold text-center'> Shopping List</h1>
 
 
       <ul>

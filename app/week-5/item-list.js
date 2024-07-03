@@ -3,7 +3,10 @@ import ItemsData from '../week-5/item.json';
 import Item from './item';
 
 
-const ItemList = () => {
+export default function ItemList () {
+  
+
+
   const [items, setItems] = useState([]);
   const [sortBy, setSortBy] = useState('name'); 
 
@@ -11,8 +14,7 @@ const ItemList = () => {
    
    
     setTimeout(() => {
-    
-      
+       
       const sortedItems = [...ItemsData].sort((a, b) => {
         if (sortBy === 'name') {
           return a.name.localeCompare(b.name);
@@ -70,4 +72,3 @@ const ItemList = () => {
   );
 };
 
-export default ItemList;
