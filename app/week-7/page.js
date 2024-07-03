@@ -19,17 +19,31 @@ function handleItemSelect(name) {
 
   const [items, setItems] = useState(itemsData);
 
-  const handleAddItem = (newItem) => {
-    setItems(prevItems => [...prevItems, newItem]);
-  };
-
+  
   return (
-    <div>
+
+    <div className="flex justify-center pt-10 px-4">
+      <div className="flex w-full">
+        <div className="w-1/3 pr-4">
+        
+          <ItemList items={items} onItemSelect={handleItemSelect} />
+        </div>
+        <div className="w-2/3">
+          <div className="px-4">
+          <MealIdeas ingredient={selectItemName}/>
+          </div>
+        </div>
+      </div>
+    </div>
+   /* <div>
       
       
       <ItemList items={itemsData} onItemSelect={handleItemSelect} />
+      <div>
       <MealIdeas ingredient={selectItemName}/>
-    </div>
+      </div>
+      
+    </div> */
   );
 };
 
