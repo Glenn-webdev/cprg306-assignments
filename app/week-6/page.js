@@ -13,8 +13,8 @@ const Page = () => {
   };
 
   return (
-    <div>
-      <h1 className="text-center text-2xl font-bold mt-6 mb-6">Shopping List Application</h1>
+    <div className='py-10'>
+      
       <NewItem onAddItem={handleAddItem} />
       <ItemList items={items} />
     </div>
