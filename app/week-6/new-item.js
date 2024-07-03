@@ -5,7 +5,7 @@ const NewItem = ({ onAddItem }) => {
   const [quantity, setQuantity] = useState(1);
   const [category, setCategory] = useState('produce');
 
-  // Function to generate a random ID
+  
   const generateId = () => {
     return Math.random().toString(36).substring(2, 15);
   };
@@ -13,13 +13,13 @@ const NewItem = ({ onAddItem }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const newItem = {
-      id: generateId(), // Generate a random ID for the new item
+      id: generateId(), 
       name: name,
       quantity: quantity,
       category: category
     };
 
-    onAddItem(newItem); // Call the onAddItem function passed via props with the new item
+    onAddItem(newItem); 
 
     // Reset form fields
     setName('');
