@@ -35,15 +35,7 @@ function handleItemSelect(name) {
         </div>
       </div>
     </div>
-   /* <div>
-      
-      
-      <ItemList items={itemsData} onItemSelect={handleItemSelect} />
-      <div>
-      <MealIdeas ingredient={selectItemName}/>
-      </div>
-      
-    </div> */
+  
   );
 };
 

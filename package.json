@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "adr": "^1.4.5",
+    "adr": "^0.0.11",
+    "encoding": "^0.1.13",
+    "firebase": "^10.12.3",
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18"
