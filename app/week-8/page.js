@@ -4,7 +4,7 @@ import { getDisplayName } from "next/dist/shared/lib/utils";
 // Import the useUserAuth hook
 import { useUserAuth } from "./_utils/auth-context";
 import Link from 'next/link';
-import { redirect } from "next/navigation";
+//import { redirect } from "next/navigation";
 
 
  
@@ -38,7 +38,7 @@ export default function Page() {
                 <p>Welcome</p>
                 <p>{user && getDisplayName}</p>
                 <Link href="http://localhost:3000/week-7">shopping list</Link>
-                {redirect("./week-7")}
+         
 
                              
                 <button className="rounded-lg  bg-lime-700 p-5 " onClick={signOut}>Sign Out</button>
@@ -65,6 +65,8 @@ export default function Page() {
     
 };
 
+
+ //{redirect("./week-7")}
 
 /*{user ? (
             <main className = 'flex min-h-screen flex-col items-center justify-between'>
