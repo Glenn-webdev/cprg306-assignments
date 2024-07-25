@@ -27,15 +27,30 @@ export default function Page() {
             console.log("error logout!")
         }
     }
+
+    async function handleAdd () {
+
+    }
    
+    async function handleGetItems () {
+
+    }
    
+   // handleItemSelect(name) {
+
+    //}
+
+
     return (
        <main>
+        
 
         
         {user ? (
             <main className = 'flex min-h-screen flex-col items-center justify-between'>
-                <p>Welcome</p>
+                <p>Welcome {user.email}</p>
+               
+
                 <p>{user && getDisplayName}</p>
                 <Link href="http://localhost:3000/week-7">shopping list</Link>
          
@@ -59,6 +74,7 @@ export default function Page() {
        
 
                 </main>
+                
                 
     )
  

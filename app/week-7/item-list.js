@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Item from "./item";
+import Link from 'next/link';
+
 
 export default function ItemList ({ items,onItemSelect }) {
   const [sortBy, setSortBy] = useState("name");
@@ -44,6 +46,8 @@ export default function ItemList ({ items,onItemSelect }) {
   return (
     <div className="max-w-7xl mx-6 w-100 px-4">
       <h2 className="font-extrabold text-center bg-clip-padding">Shopping List</h2>
+    
+
       <div className="flex justify-center space-x-2 my-4">
         <label id="sort">Sort by:</label>
         <button
