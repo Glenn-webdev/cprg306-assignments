@@ -6,14 +6,23 @@ export async function getItems (userId) {
 
     try {
         const items = [];
-        const itemsCollectionRef = collection(db,'users',userId,'items');
-        const itemQuery = (itemsCollectionRef);
-        const queryDbItems = await getDocs(itemQuery);
+        const docRef = query(collection(db,'users',userId,'items'));
+        const documents = await getDocs(docRef)
 
-        queryDbItems.forEach((doc)=> {
-            items.push({id:doc.id,...doc.data()});
-        });
-        return items;
+        if(!documents.empty)
+        {
+            documents.forEach((document) => {
+                const item = {id: document.id,...document.data()}
+                items.push(item)
+            })
+
+        }
+        else 
+        {
+            return null
+
+        }
+
 
     }
     catch (error) {
@@ -25,6 +34,16 @@ export async function getItems (userId) {
 }
 
 export async function addItem (userId,item) {
+
+try {
+    const itemsCollectionRef = collection(db,'users',userId,'items');
+    const docRef = await addDoc(itemsCollectionRef,item);
+    return docRef.id; 
+}
+catch (error) {
+    console.error("error adding items", error);
+    throw new Error("unable to add item");
+}
 
 }
 
