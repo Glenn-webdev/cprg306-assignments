@@ -9,9 +9,8 @@ import { getGitHubUserId } from '../_utils/firebase';
 export default function ShoppingList() {
     const [items, setItems] = useState([]);
     const [userId, setUserId] = useState(null);
-    const githubUsername = 'exampleUser'; // Replace with actual GitHub username
-
-    // Function to load items from the server
+   
+ 
     const loadItems = async (uid) => {
         try {
             const result = await getItems(uid);
@@ -25,7 +24,7 @@ export default function ShoppingList() {
     useEffect(() => {
         const fetchUserIdAndLoadItems = async () => {
             try {
-                const uid = await getGitHubUserId(githubUsername);
+                const uid = await getGitHubUserId(userId);
                 setUserId(uid);
                 await loadItems(uid);
             } catch (error) {
