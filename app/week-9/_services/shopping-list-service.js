@@ -46,8 +46,15 @@ catch (error) {
 }
 
 }
+``
 
-
-export async function handleDelete() {
-    const itemId = ""
+async function handleDelete(itemId, userId) {
+    try {
+        const itemRef = doc(db, 'users', userId, 'items', itemId);
+        await deleteDoc(itemRef);
+    } catch (error) {
+        console.error("error deleting item", error);
+        throw new Error("Unable to delete item");
+    }
 }
+

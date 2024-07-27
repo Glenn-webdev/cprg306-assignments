@@ -52,7 +52,7 @@ export default function Page() {
                
 
                 <p>{user && getDisplayName}</p>
-                <Link href="http://localhost:3000/week-7">shopping list</Link>
+                <Link href="http://localhost:3000/week-9/shopping-list">shopping list</Link>
          
 
                              
